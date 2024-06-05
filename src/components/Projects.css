@@ -1,18 +1,42 @@
 .projects {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .projects h2 {
-    margin-bottom: 20px;
-  }
-  
-  .projects ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .projects ul li {
-    margin: 10px 0;
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.projects p {
+  font-size: 1.2em;
+}
+
+.project {
+  margin-bottom: 30px;
+}
+
+.project h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project p {
+  font-size: 1em;
+  color: #666;
+}
+
+.book-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.book-button:hover {
+  background-color: #0056b3;
+}
