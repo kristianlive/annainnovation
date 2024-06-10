@@ -1,1 +1,23 @@
-
+/* Убедитесь, что у HTML и body нет дополнительных отступов */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    background-color: #FFFCF6;
+  }
+  
+  /* Стили для основного контейнера приложения */
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Стили для main, чтобы он занимал оставшееся пространство */
+  main {
+    flex: 1;
+  }
+  

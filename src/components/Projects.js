@@ -1,5 +1,5 @@
 import React from 'react';
-import './Projects.css';
+import './style/Projects.css';
 
 function Projects() {
   return (
@@ -17,7 +17,7 @@ function Projects() {
       </div>
       <div className="project">
         <p>För en behandling som kombinerar komfort med högsta kvalitet. Vi erbjuder 2 timmars gratis parkering. Boka din tid idag för en skonsam och effektiv hårborttagning.</p>
-        <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="book-button">⬇⬇⬇ Boka här ⬇⬇⬇</a>
+        <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="book-button">Boka tid</a>
       </div>
     </section>
   );
