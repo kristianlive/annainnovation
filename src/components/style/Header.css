@@ -1,22 +1,25 @@
 .header {
-  background-color: #F9EDD6; /* Сделайте фон хедера совпадающим с общим фоном */
-  color: black; /* Установите цвет текста */
+  background-color: #F9EDD6; /* Фон на случай, если изображение не загрузится */
+  background-image: url('../../image/vax6.webp'); /* Путь к вашему изображению */
+  background-size: cover; /* Обеспечивает, что изображение покрывает весь хедер */
+  background-position: center; /* Центрирует изображение */
+  color: black; /* Цвет текста */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border: 1px solid black; /* Добавьте черную рамку */
-  width: 100%; /* Убедитесь, что ширина 100% */
-  box-sizing: border-box; /* Включите отступы и границы в ширину */
-  position: relative; /* Убедитесь, что хедер позиционируется относительно */
-  z-index: 1; /* Убедитесь, что хедер находится выше контента */
+  padding: 40px;
+  border: 1px solid black; /* Черная рамка */
+  width: 100%; /* Ширина 100% */
+  box-sizing: border-box; /* Учитывает отступы и границы */
+  position: relative; /* Позиционирует хедер относительно */
+  z-index: 1; /* Находится выше контента */
 }
 
 .logo {
   margin: 0;
   padding: 0;
   flex-grow: 1;
-  color: black; /* Установите цвет текста */
+  color: black; /* Цвет текста */
   text-decoration: none;
   font-size: 1.5em;
 }
@@ -35,15 +38,18 @@
 }
 
 .nav-links ul li a {
-  color: black; /* Установите цвет текста */
+  color: black; /* Цвет текста */
   text-decoration: none;
-  padding: 5px 10px; /* Добавьте отступы для кнопок */
-  border-radius: 5px; /* Добавьте скругленные углы */
-  transition: background-color 0.3s; /* Добавьте плавный переход */
+  padding: 5px 10px; /* Отступы для кнопок */
+  border-radius: 5px; /* Скругленные углы */
+  transition: background-color 0.5s; /* Плавный переход */
+  background-color: #f7eaee; /* Полупрозрачный фон */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Полупрозрачная обводка */
+  border-radius: 10%;
 }
 
 .nav-links ul li a:hover {
-  background-color: #f3cea1; /* Установите цвет фона при наведении */
+  background-color: #f3cea1; /* Цвет фона при наведении */
 }
 
 .hamburger {
@@ -65,13 +71,13 @@
     display: none; /* Скрываем навигацию по умолчанию */
     flex-direction: column;
     width: 100%;
-    position: absolute; /* Добавляем абсолютное позиционирование */
-    top: 100%; /* Устанавливаем меню ниже хедера */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Меню ниже хедера */
     left: 0;
     background-color: #fff6f6; /* Фон совпадает с общим фоном */
-    border-top: 1px solid black; /* Добавляем верхнюю границу */
-    border-bottom: 1px solid black; /* Добавляем нижнюю границу */
-    z-index: 0; /* Обеспечиваем, что меню будет под хедером */
+    border-top: 1px solid black; /* Верхняя граница */
+    border-bottom: 1px solid black; /* Нижняя граница */
+    z-index: 0; /* Меню под хедером */
   }
 
   .nav-links.open {
@@ -89,10 +95,10 @@
     text-align: center;
     margin: 10px 0;
   }
+
   .nav-links ul li a:hover {
-    background-color: #f3cea1; /* НЕ РАБОТАЕТ */
+    background-color: #f3cea1; /* Цвет фона при наведении */
   }
-  
 
   .hamburger {
     display: flex; /* Показываем гамбургер-меню */

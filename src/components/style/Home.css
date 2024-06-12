@@ -1,7 +1,7 @@
 .home {
     text-align: center;
     padding: 20px;
-    background-color: #FFFCF6;
+    background-color: #f7eaee;
     color: #333;
   }
   
@@ -15,30 +15,50 @@
     margin-bottom: 20px;
   }
   
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
   .services {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
+    flex: 1;
   }
   
-  .service {
+  .card {
     background-color: #f9edd6;
-    padding: 20px;
+    padding: 20px; /* Öka padding för att göra korten större */
     border: 1px solid #ccc;
     border-radius: 8px;
+    max-width: 400px; /* Öka maxbredd för att göra korten större */
+    margin: 0 auto; /* Centrerar korten horisontellt */
   }
   
   .service h2 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Öka storleken på texten i rubriken */
     margin-bottom: 10px;
   }
   
   .service p {
-    font-size: 1em;
+    font-size: 1em; /* Öka storleken på brödtexten */
   }
   
-  .book-button {
+  .home-image {
+    max-width: 500px; /* Justera maxbredden efter behov */
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px; /* Rundade hörn för en snyggare look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lägga till en lätt skugga */
+    flex: 1;
+  }
+  
+  .button {
     display: inline-block;
     background-color: #FF8C00;
     color: white;
@@ -48,7 +68,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .book-button:hover {
+  .button:hover {
     background-color: #e67600;
   }
   
