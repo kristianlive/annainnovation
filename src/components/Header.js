@@ -18,9 +18,9 @@ function Header() {
       <h3><Link to="/" className="logo" onClick={closeMenu}>Anna Innovation</Link></h3>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-          <li><Link to="/prislista">Prislista</Link></li> {/* Обновляем ссылку */}
+          <li><Link to="/" onClick={closeMenu}>Hem</Link></li>
+          <li><Link to="/varatjanster" onClick={closeMenu}>Våra Tjänster</Link></li>
+          <li><Link to="/prislista" onClick={closeMenu}>Prislista</Link></li>
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
         </ul>

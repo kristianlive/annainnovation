@@ -90,7 +90,7 @@
     margin: 10px 0;
   }
   .nav-links ul li a:hover {
-    background-color: #f50000; /* НЕ РАБОТАЕТ */
+    background-color: #f3cea1; /* НЕ РАБОТАЕТ */
   }
   
 
