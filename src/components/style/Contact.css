@@ -1,9 +1,49 @@
 .contact {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .contact h2 {
-    margin-bottom: 20px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFCF6;
+  color: #333;
+}
+
+.contact h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #FF8C00;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.opening-hours {
+  margin-top: 20px;
+}
+
+.opening-hours h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.opening-hours ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opening-hours ul li {
+  font-size: 1.2em;
+  margin: 5px 0;
+}

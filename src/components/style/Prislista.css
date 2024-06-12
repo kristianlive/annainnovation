@@ -1,0 +1,61 @@
+.prislista {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFCF6;
+  color: #333;
+}
+
+.prislista h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Создание 4 колонок */
+  gap: 20px; /* Отступы между карточками */
+  justify-items: center; /* Центрирование карточек по горизонтали */
+}
+
+.pricing .category-title {
+  grid-column: span 4; /* Заголовок занимает всю ширину */
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  text-align: center; /* Центрирование заголовка */
+}
+
+.price-item {
+  background-color: #f9edd6;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%; /* Уменьшение ширины карточек */
+  max-width: 250px; /* Максимальная ширина для карточек */
+  text-align: left; /* Текст выровнен по левому краю */
+}
+
+.price-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center; /* Заголовки по центру */
+}
+
+.price-item p {
+  font-size: 1.2em;
+  margin-left: 0; /* Текст выровнен по левому краю */
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .price-item {
+    max-width: 250px; /* Снять ограничение ширины */
+    max-height: 150px;
+    width: 100%; /* Полная ширина */
+  }
+}
