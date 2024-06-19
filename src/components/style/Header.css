@@ -27,7 +27,7 @@
   text-decoration: none;
   font-size: 2.5em; /* Större textstorlek */
   font-family: 'Playfair Display', serif; /* Använd Google Fonts */
-  z-index: 2; /* Se till att texten ligger ovanför ::before */
+  z-index: 1; /* Se till att texten ligger ovanför ::before */
 }
 
 .logo:hover, .logo:focus {
@@ -79,6 +79,7 @@
   display: none; /* Döljer hamburger-menyn som standard */
   flex-direction: column;
   cursor: pointer;
+  z-index: 2; /* Se till att hamburger-menyn ligger ovanför logotypen */
 }
 
 .hamburger .line {
@@ -126,5 +127,7 @@
 
   .hamburger {
     display: flex; /* Visar hamburger-menyn */
+    position: absolute;
+    right: 30px; /* Placera hamburger-menyn till höger */
   }
 }

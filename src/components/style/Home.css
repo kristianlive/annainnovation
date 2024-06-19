@@ -6,32 +6,32 @@
 }
 
 .home h1 {
-  font-size: 2em; /* Увеличен размер текста на 20% */
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
 .home p {
-  font-size: 1.4em; /* Увеличен размер текста на 20% */
+  font-size: 1.4em;
   margin-bottom: 20px;
-  text-align: left; /* Текст выровнен по левому краю */
+  text-align: left;
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Центрирует карточки по горизонтали */
+  justify-content: center;
   align-items: center;
   gap: 20px;
   max-width: 100%;
-  overflow: hidden; /* Предотвращает выход содержимого за границы */
+  overflow: hidden;
 }
 
 .services {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1200px; /* Ограничивает максимальную ширину контейнера карточек */
-  margin: 0 auto; /* Центрирует контейнер карточек */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
@@ -40,25 +40,24 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   flex: 1;
-  max-width: 500px; /* Ограничивает максимальную ширину карточек */
-  margin: 0 auto; /* Центрирует карточки */
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .card h2 {
-  font-size: 1.8em; /* Увеличен размер текста на 20% */
+  font-size: 1.8em;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 1.2em; /* Увеличен размер текста на 20% */
+  font-size: 1.2em;
 }
 
 .home-image {
-  max-width: 50%; /* Ограничивает максимальную ширину изображения */
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер */
+  object-fit: cover;
   border-radius: 8px;
   margin: 0 auto;
 }
@@ -78,11 +77,11 @@
 }
 
 .faq {
-  text-align: left; 
+  text-align: left;
 }
 
 .faq h2 {
-  font-size: 2em; 
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
@@ -94,6 +93,8 @@
   margin-bottom: 10px;
   cursor: pointer;
   max-width: 60%;
+  word-wrap: break-word; /* Добавлено для предотвращения выхода текста за границы */
+  overflow: hidden; /* Добавлено для предотвращения выхода содержимого за границы */
 }
 
 .faq-item h3 {
@@ -119,14 +120,27 @@
 
   .home-image {
     width: 100%;
+    height: auto;
     margin-top: 20px;
   }
 
   .services {
-    max-width: 100%; /* Убираем ограничение ширины контейнера для мобильных устройств */
+    max-width: 100%;
   }
 
   .card {
-    max-width: 100%; /* Убираем ограничение ширины карточек для мобильных устройств */
+    max-width: 100%;
+  }
+
+  .faq-item {
+    max-width: 100%; /* Убираем ограничение ширины для FAQ на мобильных устройствах */
+  }
+}
+
+/* Дизайн для больших экранов */
+@media (min-width: 769px) {
+  .home-image {
+    max-width: 50%;
+    width: auto;
   }
 }
