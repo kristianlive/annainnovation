@@ -47,7 +47,7 @@
 }
 
 .home-image {
-  max-width: 100%; /* Обеспечивает, что изображение не выходит за границы контейнера */
+  max-width: 100%;
   height: auto;
   flex: 1;
 }
@@ -66,14 +66,30 @@
   background-color: #e67600;
 }
 
+.testimonials, .offers, .faq {
+  margin: 20px 0;
+}
+
+.testimonial, .offer, .faq-item {
+  background-color: #f9edd6;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.testimonial p, .offer p, .faq-item p {
+  font-size: 1em;
+}
+
 /* Адаптивный дизайн для мобильных устройств */
 @media (max-width: 768px) {
   .content {
-    flex-direction: column; /* Изменение направления на колонку для мобильных устройств */
+    flex-direction: column;
   }
 
   .home-image {
-    width: 100%; /* Обеспечивает, что изображение занимает полную ширину контейнера */
-    margin-top: 20px; /* Добавляет отступ сверху */
+    width: 100%;
+    margin-top: 20px;
   }
 }

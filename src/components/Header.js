@@ -21,8 +21,8 @@ function Header() {
           <li><Link to="/" onClick={closeMenu}>Hem</Link></li>
           <li><Link to="/varatjanster" onClick={closeMenu}>Våra Tjänster</Link></li>
           <li><Link to="/prislista" onClick={closeMenu}>Prislista</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/contact" onClick={closeMenu}>Kontakt</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>Om oss</Link></li>
         </ul>
       </div>
       <div className="hamburger" onClick={toggleMenu}>
