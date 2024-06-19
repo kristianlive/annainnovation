@@ -31,6 +31,7 @@ function Contact() {
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
+          title="Google Maps Location"
         ></iframe>
       </div>
     </div>
