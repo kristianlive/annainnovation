@@ -6,27 +6,32 @@
 }
 
 .home h1 {
-  font-size: 2em;
+  font-size: 2em; /* Увеличен размер текста на 20% */
   margin-bottom: 20px;
 }
 
 .home p {
-  font-size: 1.2em;
+  font-size: 1.4em; /* Увеличен размер текста на 20% */
   margin-bottom: 20px;
+  text-align: left; /* Текст выровнен по левому краю */
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center; /* Центрирует карточки по горизонтали */
   align-items: center;
   gap: 20px;
+  max-width: 100%;
+  overflow: hidden; /* Предотвращает выход содержимого за границы */
 }
 
 .services {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1200px; /* Ограничивает максимальную ширину контейнера карточек */
+  margin: 0 auto; /* Центрирует контейнер карточек */
 }
 
 .card {
@@ -35,21 +40,27 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   flex: 1;
+  max-width: 500px; /* Ограничивает максимальную ширину карточек */
+  margin: 0 auto; /* Центрирует карточки */
 }
 
 .card h2 {
-  font-size: 1.5em;
+  font-size: 1.8em; /* Увеличен размер текста на 20% */
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 1em;
+  font-size: 1.2em; /* Увеличен размер текста на 20% */
 }
 
 .home-image {
-  max-width: 100%;
+  max-width: 50%; /* Ограничивает максимальную ширину изображения */
+  width: 100%;
   height: auto;
-  flex: 1;
+  display: block;
+  object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер */
+  border-radius: 8px;
+  margin: 0 auto;
 }
 
 .button {
@@ -66,20 +77,38 @@
   background-color: #e67600;
 }
 
-.testimonials, .offers, .faq {
-  margin: 20px 0;
+.faq {
+  text-align: left; 
 }
 
-.testimonial, .offer, .faq-item {
+.faq h2 {
+  font-size: 2em; 
+  margin-bottom: 20px;
+}
+
+.faq-item {
   background-color: #f9edd6;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-bottom: 10px;
+  cursor: pointer;
+  max-width: 60%;
 }
 
-.testimonial p, .offer p, .faq-item p {
-  font-size: 1em;
+.faq-item h3 {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item p {
+  font-size: 1.2em;
+}
+
+.faq-item .arrow {
+  font-size: 0.8em;
 }
 
 /* Адаптивный дизайн для мобильных устройств */
@@ -91,5 +120,13 @@
   .home-image {
     width: 100%;
     margin-top: 20px;
+  }
+
+  .services {
+    max-width: 100%; /* Убираем ограничение ширины контейнера для мобильных устройств */
+  }
+
+  .card {
+    max-width: 100%; /* Убираем ограничение ширины карточек для мобильных устройств */
   }
 }

@@ -1,27 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap'); /* Importera Google Fonts */
+
 .header {
-  background-color: #F9EDD6; /* Фон на случай, если изображение не загрузится */
-  background-image: url('../../image/vax6.webp'); /* Путь к вашему изображению */
-  background-size: cover; /* Обеспечивает, что изображение покрывает весь хедер */
-  background-position: center; /* Центрирует изображение */
-  color: black; /* Цвет текста */
+  background-color: #F9EDD6; /* Fallback-bakgrundsfärg */
+  background-image: url('../../image/vax6.webp'); /* Bakgrundsbild */
+  background-size: cover; /* Bilden täcker hela headern */
+  background-position: center; /* Bilden är centrerad */
+  color: black; /* Textfärg */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px;
-  border: 1px solid black; /* Черная рамка */
-  width: 100%; /* Ширина 100% */
-  box-sizing: border-box; /* Учитывает отступы и границы */
-  position: relative; /* Позиционирует хедер относительно */
-  z-index: 1; /* Находится выше контента */
+  border: 1px solid black; /* Svart ram */
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1; /* Headern ligger ovanför övrigt innehåll */
 }
 
 .logo {
+  position: relative; /* Positionering för att kunna använda ::before */
   margin: 0;
-  padding: 0;
+  padding: 10px 20px; /* Padding för att ge utrymme runt texten */
   flex-grow: 1;
-  color: black; /* Цвет текста */
+  color: rgb(255, 255, 255); /* Vit textfärg för att sticka ut mot bakgrunden */
+  text-shadow: 2px 2px 5px #F272A4, 0 0 5px #000000;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 2.5em; /* Större textstorlek */
+  font-family: 'Playfair Display', serif; /* Använd Google Fonts */
+  z-index: 2; /* Se till att texten ligger ovanför ::before */
+}
+
+.logo:hover, .logo:focus {
+  text-decoration: none; /* Ta bort understrykning vid hover och focus */
+}
+
+.logo::before {
+  content: ''; /* Nödvändigt för att pseudo-element ska visas */
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  border-radius: 10px; /* Rundade hörn */
+  z-index: -1; /* Placera bakgrundsfärgen bakom texten */
 }
 
 .nav-links ul {
@@ -29,7 +50,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap; /* Позволяет переносить элементы на новую строку */
+  flex-wrap: wrap; /* Tillåter radbrytning */
   font-size: larger;
 }
 
@@ -38,22 +59,24 @@
 }
 
 .nav-links ul li a {
-  color: black; /* Цвет текста */
+  color: black; /* Textfärg */
   text-decoration: none;
-  padding: 5px 10px; /* Отступы для кнопок */
-  border-radius: 5px; /* Скругленные углы */
-  transition: background-color 0.5s; /* Плавный переход */
-  background-color: #f7eaee; /* Полупрозрачный фон */
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Полупрозрачная обводка */
-  border-radius: 10%;
+  padding: 5px 10px; /* Padding för länkar */
+  border-radius: 5px; /* Rundade hörn */
+  transition: background-color 0.5s; /* Prydlig övergång */
+  background-color: rgba(247, 234, 238, 0.8); /* Halvgenomskinlig bakgrundsfärg */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Halvgenomskinlig kantlinje */
+  font-family: 'Open Sans', sans-serif; /* Använd Google Fonts */
+  font-size: 1em;
 }
 
-.nav-links ul li a:hover {
-  background-color: #f3cea1; /* Цвет фона при наведении */
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+  background-color: rgba(243, 206, 161, 0.8); /* Bakgrundsfärg vid hover och active */
 }
 
 .hamburger {
-  display: none; /* Скрываем гамбургер-меню по умолчанию */
+  display: none; /* Döljer hamburger-menyn som standard */
   flex-direction: column;
   cursor: pointer;
 }
@@ -65,23 +88,23 @@
   margin: 4px 0;
 }
 
-/* Адаптивный дизайн для мобильных устройств */
+/* Responsiv design för mobila enheter */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Скрываем навигацию по умолчанию */
+    display: none; /* Döljer navigationen som standard */
     flex-direction: column;
     width: 100%;
-    position: absolute; /* Абсолютное позиционирование */
-    top: 100%; /* Меню ниже хедера */
+    position: absolute;
+    top: 100%;
     left: 0;
-    background-color: #fff6f6; /* Фон совпадает с общим фоном */
-    border-top: 1px solid black; /* Верхняя граница */
-    border-bottom: 1px solid black; /* Нижняя граница */
-    z-index: 0; /* Меню под хедером */
+    background-color: #fff6f6; /* Samma bakgrundsfärg som headern */
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    z-index: 0; /* Navigationen ligger under headern */
   }
 
   .nav-links.open {
-    display: flex; /* Отображаем навигацию при открытии */
+    display: flex; /* Visar navigationen när den är öppen */
   }
 
   .nav-links ul {
@@ -96,11 +119,12 @@
     margin: 10px 0;
   }
 
-  .nav-links ul li a:hover {
-    background-color: #f3cea1; /* Цвет фона при наведении */
+  .nav-links ul li a:hover,
+  .nav-links ul li a.active {
+    background-color: rgba(243, 206, 161, 0.8); /* Bakgrundsfärg vid hover och active */
   }
 
   .hamburger {
-    display: flex; /* Показываем гамбургер-меню */
+    display: flex; /* Visar hamburger-menyn */
   }
 }
