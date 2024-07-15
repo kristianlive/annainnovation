@@ -2,42 +2,76 @@ import React, { useState } from 'react';
 import './style/Home.css';
 import vaxImage from '../image/vax8.jpg';
 
-function Home() {
+function Home({ isAuthenticated }) {
   const [openQuestion, setOpenQuestion] = useState(null);
+  const [editableText, setEditableText] = useState('Välkommen till oss på Anna Innovation');
+  const [paragraphText, setParagraphText] = useState('För en behandling som kombinerar komfort med högsta kvalitet. Vi erbjuder 2 timmars gratis parkering. Boka din tid idag för en skonsam och effektiv hårborttagning.');
+  const [service1Text, setService1Text] = useState('Upplev vår professionella brasilianska vaxning. Vår metod är både skonsam och effektiv, och ger ett hållbart resultat för den som föredrar traditionell vaxning.');
+  const [service2Text, setService2Text] = useState('För en mer långvarig lösning, prova vår laserbehandling. Den erbjuder en modern teknik för nästan smärtfri och varaktig hårborttagning.');
+  const [infoText, setInfoText] = useState('Vi är stolta över att erbjuda högkvalitativa tjänster inom hårborttagning, som kombinerar modern teknik med professionell expertis. Vårt mål är att ge dig den bästa möjliga upplevelsen i en avslappnande och bekväm miljö.');
 
   const toggleQuestion = (index) => {
     setOpenQuestion(openQuestion === index ? null : index);
   };
 
+  const handleTitleChange = (e) => {
+    setEditableText(e.target.value);
+  };
+
+  const handleParagraphChange = (e) => {
+    setParagraphText(e.target.value);
+  };
+
+  const handleService1Change = (e) => {
+    setService1Text(e.target.value);
+  };
+
+  const handleService2Change = (e) => {
+    setService2Text(e.target.value);
+  };
+
+  const handleInfoChange = (e) => {
+    setInfoText(e.target.value);
+  };
+
   return (
     <div className="home">
-      <h1>Välkommen till oss på Anna Innovation</h1>
-      <p>
-        För en behandling som kombinerar komfort med högsta kvalitet.
-        Vi erbjuder 2 timmars gratis parkering. Boka din tid idag för en skonsam och effektiv hårborttagning.
-      </p>
+      {isAuthenticated ? (
+        <input type="text" value={editableText} onChange={handleTitleChange} />
+      ) : (
+        <h1>{editableText}</h1>
+      )}
+      {isAuthenticated ? (
+        <textarea value={paragraphText} onChange={handleParagraphChange} />
+      ) : (
+        <p>{paragraphText}</p>
+      )}
       <div className="content">
         <div className="services">
           <div className="card service">
             <h2>Vaxning Brasiliansk - 499 kr</h2>
-            <p>
-              Upplev vår professionella brasilianska vaxning. Vår metod är både skonsam och effektiv,
-              och ger ett hållbart resultat för den som föredrar traditionell vaxning.
-            </p>
+            {isAuthenticated ? (
+              <textarea value={service1Text} onChange={handleService1Change} />
+            ) : (
+              <p>{service1Text}</p>
+            )}
           </div>
           <div className="card service">
             <h2>Laser Brasiliansk - 799 kr</h2>
-            <p>
-              För en mer långvarig lösning, prova vår laserbehandling. Den erbjuder en modern teknik
-              för nästan smärtfri och varaktig hårborttagning.
-            </p>
+            {isAuthenticated ? (
+              <textarea value={service2Text} onChange={handleService2Change} />
+            ) : (
+              <p>{service2Text}</p>
+            )}
           </div>
         </div>
         <img src={vaxImage} alt="Vaxning" className="home-image" />
       </div>
-      <p>
-        Vi är stolta över att erbjuda högkvalitativa tjänster inom hårborttagning, som kombinerar modern teknik med professionell expertis. Vårt mål är att ge dig den bästa möjliga upplevelsen i en avslappnande och bekväm miljö.
-      </p>
+      {isAuthenticated ? (
+        <textarea value={infoText} onChange={handleInfoChange} />
+      ) : (
+        <p>{infoText}</p>
+      )}
       <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="button">Boka tid</a>
       <h2>Vanliga frågor (FAQ)</h2>
       <div className="faq">

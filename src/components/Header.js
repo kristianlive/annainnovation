@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './style/Header.css';
 
-function Header() {
+function Header({ isAuthenticated, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,9 +15,21 @@ function Header() {
     setIsOpen(false);
   };
 
+  const handleLoginClick = () => {
+    navigate('/login');
+    closeMenu();
+  };
+
+  const handleLogoutClick = () => {
+    onLogout();
+    navigate('/login');
+  };
+
   return (
     <header className="header">
-      <NavLink to="/" className={`logo ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu}>Anna Innovation</NavLink>
+      <NavLink to="/" className={`logo ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu}>
+        Anna Innovation
+      </NavLink>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
@@ -43,6 +56,13 @@ function Header() {
             <NavLink to="/about" isActive={() => location.pathname === '/about'} activeClassName="active" onClick={closeMenu}>
               Om oss
             </NavLink>
+          </li>
+          <li>
+            {isAuthenticated ? (
+              <button onClick={handleLogoutClick}>Logga ut</button>
+            ) : (
+              <button onClick={handleLoginClick}>Logga in</button>
+            )}
           </li>
         </ul>
       </div>
