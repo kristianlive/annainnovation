@@ -10,12 +10,12 @@ function Prislista() {
         <a href="https://www.bokadirekt.se/boka-tjanst/anna-innovation-vaxning-malmo-52639/laser-armhalor-2147127" className="price-item-link" target="_blank" rel="noopener noreferrer">
         <div className="price-item">
           <h3>Laser – armhålor</h3>
-          <p>30 minuter, 399 kr</p>
+          <p>30 minuter, 499 kr</p>
         </div>
         </a>
         <div className="price-item">
           <h3>Laser – brasiliansk</h3>
-          <p>60 minuter, 800 kr</p>
+          <p>60 minuter, 899 kr</p>
         </div>
         <div className="price-item">
           <h3>Laser – brasiliansk + armhålor</h3>
