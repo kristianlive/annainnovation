@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style/Home.css';
 import vaxImage from '../image/vax8.jpg';
 
 function Home({ isAuthenticated }) {
   const [openQuestion, setOpenQuestion] = useState(null);
-  const [editableText, setEditableText] = useState('Välkommen till oss på Anna Innovation');
-  const [paragraphText, setParagraphText] = useState('För en behandling som kombinerar komfort med högsta kvalitet. Vi erbjuder 2 timmars gratis parkering. Boka din tid idag för en skonsam och effektiv hårborttagning.');
-  const [service1Text, setService1Text] = useState('Upplev vår professionella brasilianska vaxning. Vår metod är både skonsam och effektiv, och ger ett hållbart resultat för den som föredrar traditionell vaxning.');
-  const [service2Text, setService2Text] = useState('För en mer långvarig lösning, prova vår laserbehandling. Den erbjuder en modern teknik för nästan smärtfri och varaktig hårborttagning.');
-  const [infoText, setInfoText] = useState('Vi är stolta över att erbjuda högkvalitativa tjänster inom hårborttagning, som kombinerar modern teknik med professionell expertis. Vårt mål är att ge dig den bästa möjliga upplevelsen i en avslappnande och bekväm miljö.');
+
+  const [editableText, setEditableText] = useState(localStorage.getItem('editableText') || 'Välkommen till oss på Anna Innovation');
+  const [paragraphText, setParagraphText] = useState(localStorage.getItem('paragraphText') || 'För en behandling som kombinerar komfort med högsta kvalitet. Vi erbjuder 2 timmars gratis parkering. Boka din tid idag för en skonsam och effektiv hårborttagning.');
+  const [service1Text, setService1Text] = useState(localStorage.getItem('service1Text') || 'Upplev vår professionella brasilianska vaxning. Vår metod är både skonsam och effektiv, och ger ett hållbart resultat för den som föredrar traditionell vaxning.');
+  const [service2Text, setService2Text] = useState(localStorage.getItem('service2Text') || 'För en mer långvarig lösning, prova vår laserbehandling. Den erbjuder en modern teknik för nästan smärtfri och varaktig hårborttagning.');
+  const [infoText, setInfoText] = useState(localStorage.getItem('infoText') || 'Vi är stolta över att erbjuda högkvalitativa tjänster inom hårborttagning, som kombinerar modern teknik med professionell expertis. Vårt mål är att ge dig den bästa möjliga upplevelsen i en avslappnande och bekväm miljö.');
 
   const toggleQuestion = (index) => {
     setOpenQuestion(openQuestion === index ? null : index);
@@ -34,18 +35,23 @@ function Home({ isAuthenticated }) {
     setInfoText(e.target.value);
   };
 
+  const saveChanges = () => {
+    localStorage.setItem('editableText', editableText);
+    localStorage.setItem('paragraphText', paragraphText);
+    localStorage.setItem('service1Text', service1Text);
+    localStorage.setItem('service2Text', service2Text);
+    localStorage.setItem('infoText', infoText);
+    alert('Ändringar sparade!');
+  };
+
   return (
     <div className="home">
-      {isAuthenticated ? (
-        <input type="text" value={editableText} onChange={handleTitleChange} />
-      ) : (
-        <h1>{editableText}</h1>
-      )}
-      {isAuthenticated ? (
-        <textarea value={paragraphText} onChange={handleParagraphChange} />
-      ) : (
-        <p>{paragraphText}</p>
-      )}
+     {isAuthenticated ? (
+  <textarea className="editable-textarea" value={paragraphText} onChange={handleParagraphChange} />
+) : (
+  <p>{paragraphText}</p>
+)}
+
       <div className="content">
         <div className="services">
           <div className="card service">
@@ -72,6 +78,7 @@ function Home({ isAuthenticated }) {
       ) : (
         <p>{infoText}</p>
       )}
+      {isAuthenticated && <button onClick={saveChanges}>Spara</button>}
       <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="button">Boka tid</a>
       <h2>Vanliga frågor (FAQ)</h2>
       <div className="faq">

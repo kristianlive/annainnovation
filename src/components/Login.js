@@ -22,7 +22,7 @@ function Login({ onLogin }) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Имя пользователя:</label>
+        <label>Användare:</label>
         <input 
           type="text" 
           value={username} 
@@ -30,14 +30,14 @@ function Login({ onLogin }) {
         />
       </div>
       <div>
-        <label>Пароль:</label>
+        <label>Lösenord:</label>
         <input 
           type="password" 
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
         />
       </div>
-      <button type="submit">Войти</button>
+      <button type="submit">Logga in</button>
     </form>
   );
 }

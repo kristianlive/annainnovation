@@ -1,3 +1,24 @@
+/* Стили для всех текстовых областей */
+textarea {
+  width: 100%;
+  height: 120%;
+  padding: 10px;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Стили для текстовых областей с классом .editable-textarea */
+.editable-textarea {
+  width: 100%;
+  height: 120%;
+  padding: 10px;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Остальные стили страницы */
 .home {
   text-align: center;
   padding: 20px;
@@ -93,8 +114,8 @@
   margin-bottom: 10px;
   cursor: pointer;
   max-width: 60%;
-  word-wrap: break-word; /* Добавлено для предотвращения выхода текста за границы */
-  overflow: hidden; /* Добавлено для предотвращения выхода содержимого за границы */
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .faq-item h3 {
@@ -112,7 +133,6 @@
   font-size: 0.8em;
 }
 
-/* Адаптивный дизайн для мобильных устройств */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -133,11 +153,10 @@
   }
 
   .faq-item {
-    max-width: 100%; /* Убираем ограничение ширины для FAQ на мобильных устройствах */
+    max-width: 100%;
   }
 }
 
-/* Дизайн для больших экранов */
 @media (min-width: 769px) {
   .home-image {
     max-width: 50%;

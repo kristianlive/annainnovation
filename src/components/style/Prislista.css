@@ -12,17 +12,17 @@
 
 .pricing {
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 1fr)); /* Создание 4 колонок с минимальной шириной */
-  gap: 10px; /* Отступы между карточками */
-  justify-items: stretch; /* Растягивание карточек по горизонтали */
-  align-items: stretch; /* Растягивание карточек по вертикали */
+  grid-template-columns: repeat(4, 1fr); /* Fyra kolumner */
+  gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
 }
 
-.pricing .category-title {
-  grid-column: span 4; /* Заголовок занимает всю ширину */
+.category-title {
+  grid-column: span 4;
   font-size: 1.8em;
   margin-bottom: 10px;
-  text-align: center; /* Центрирование заголовка */
+  text-align: center;
 }
 
 .price-item {
@@ -30,29 +30,32 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: left; /* Текст выровнен по левому краю */
+  text-align: center; /* Centrering av innehållet */
+  flex: 1 1 auto; /* Gör att flexboxen beter sig bättre inom CSS-grid */
 }
 
 .price-item h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
-  text-align: center; /* Заголовки по центру */
 }
 
-.price-item p {
+.price-item p, 
+.price-item input {
   font-size: 1.2em;
-  margin-left: 0; /* Текст выровнен по левому краю */
+  margin: 0;
+  width: auto; /* Ändrad från 100% */
+  text-align: center; /* Centrera pristexten */
+  box-sizing: border-box;
 }
 
-/* Адаптивный дизайн для мобильных устройств */
+/* Anpassning för mobila enheter */
 @media (max-width: 768px) {
   .pricing {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr; /* En kolumn på mindre skärmar */
     gap: 10px;
   }
 
   .price-item {
-    max-width: 100%; /* Полная ширина */
+    max-width: 100%;
   }
 }
