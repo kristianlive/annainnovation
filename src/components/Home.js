@@ -57,7 +57,7 @@ function Home({ isAuthenticated }) {
       <div className="content">
         <div className="services">
           <div className="card service">
-            <h2>Vaxning Brasiliansk - 499 kr</h2>
+            <h2>Vaxning Brasiliansk - 599 kr</h2>
             {isAuthenticated ? (
               <textarea value={service1Text} onChange={handleService1Change} />
             ) : (
