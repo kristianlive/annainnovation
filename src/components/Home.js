@@ -1,4 +1,4 @@
-import React, { useState,} from 'react';
+import React, { useState } from 'react';
 import './style/Home.css';
 import vaxImage from '../image/vax8.jpg';
 
@@ -42,11 +42,17 @@ function Home({ isAuthenticated }) {
 
   return (
     <div className="home">
-     {isAuthenticated ? (
-  <textarea className="editable-textarea" value={paragraphText} onChange={handleParagraphChange} />
-) : (
-  <p>{paragraphText}</p>
-)}
+      {isAuthenticated ? (
+        <textarea className="editable-textarea" value={editableText} onChange={(e) => setEditableText(e.target.value)} />
+      ) : (
+        <h1>{editableText}</h1>
+      )}
+
+      {isAuthenticated ? (
+        <textarea className="editable-textarea" value={paragraphText} onChange={handleParagraphChange} />
+      ) : (
+        <p>{paragraphText}</p>
+      )}
 
       <div className="content">
         <div className="services">
