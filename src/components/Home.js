@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,} from 'react';
 import './style/Home.css';
 import vaxImage from '../image/vax8.jpg';
 
@@ -13,10 +13,6 @@ function Home({ isAuthenticated }) {
 
   const toggleQuestion = (index) => {
     setOpenQuestion(openQuestion === index ? null : index);
-  };
-
-  const handleTitleChange = (e) => {
-    setEditableText(e.target.value);
   };
 
   const handleParagraphChange = (e) => {
