@@ -12,7 +12,7 @@
 
 .pricing {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Fyra kolumner */
+  grid-template-columns: repeat(4, 1fr); /* Четыре колонки для больших экранов */
   gap: 20px;
   justify-items: stretch;
   align-items: stretch;
@@ -30,8 +30,11 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: center; /* Centrering av innehållet */
-  flex: 1 1 auto; /* Gör att flexboxen beter sig bättre inom CSS-grid */
+  text-align: left; /* Выравниваем текст по левому краю */
+  flex: 1 1 auto;
+  min-width: 0;
+  word-wrap: break-word; /* Добавляем перенос слов */
+  word-break: break-word; /* Перенос слов для длинных слов */
 }
 
 .price-item h3 {
@@ -43,19 +46,42 @@
 .price-item input {
   font-size: 1.2em;
   margin: 0;
-  width: auto; /* Ändrad från 100% */
-  text-align: center; /* Centrera pristexten */
+  width: auto;
+  text-align: left; /* Текст по левому краю */
   box-sizing: border-box;
 }
 
-/* Anpassning för mobila enheter */
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   .pricing {
-    grid-template-columns: 1fr; /* En kolumn på mindre skärmar */
+    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
     gap: 10px;
   }
 
   .price-item {
-    max-width: 100%;
+    background-color: #f9edd6; /* Восстанавливаем цвет фона карточек */
+    border: 1px solid #ccc; /* Восстанавливаем рамку карточек */
+    border-radius: 8px; /* Восстанавливаем закругленные углы */
+    padding: 15px; /* Уменьшаем отступы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для лучшего визуального эффекта */
+    margin-bottom: 10px; /* Добавляем нижний отступ между карточками */
+  }
+
+  .prislista {
+    background-color: #FFFCF6; /* Восстанавливаем фон */
+  }
+
+  .prislista h1 {
+    font-size: 1.5em; /* Уменьшение размера заголовка на маленьких экранах */
+  }
+
+  .price-item h3 {
+    font-size: 1.3em; /* Уменьшение размера текста в заголовке на маленьких экранах */
+  }
+
+  .price-item p, 
+  .price-item input {
+    font-size: 1em; /* Уменьшение размера текста */
   }
 }
+
