@@ -19,7 +19,7 @@
 }
 
 .category-title {
-  grid-column: span 4;
+  grid-column: span 4; /* Заголовок занимает все 4 колонки на десктопе */
   font-size: 1.8em;
   margin-bottom: 10px;
   text-align: center;
@@ -58,26 +58,21 @@
     gap: 10px;
   }
 
-  .price-item {
-    background-color: #f9edd6; /* Восстанавливаем цвет фона карточек */
-    border: 1px solid #ccc; /* Восстанавливаем рамку карточек */
-    border-radius: 8px; /* Восстанавливаем закругленные углы */
-    padding: 15px; /* Уменьшаем отступы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для лучшего визуального эффекта */
-    margin-bottom: 10px; /* Добавляем нижний отступ между карточками */
-    text-align: center; /* Центрируем текст для лучшего отображения на мобильных */
+  .category-title {
+    grid-column: span 1; /* Заголовок занимает только одну колонку на мобильных устройствах */
   }
 
-  .prislista {
-    background-color: #FFFCF6; /* Восстанавливаем фон */
+  .price-item {
+    max-width: 100%;
+    padding: 15px; /* Уменьшение отступов */
   }
 
   .prislista h1 {
-    font-size: 1.5em; /* Уменьшение размера заголовка на маленьких экранах */
+    font-size: 1.5em; /* Уменьшение размера заголовка на små экраны */
   }
 
   .price-item h3 {
-    font-size: 1.3em; /* Уменьшение размера текста в заголовке на маленьких экранах */
+    font-size: 1.3em; /* Уменьшение размера текста заголовка на små экраны */
   }
 
   .price-item p, 

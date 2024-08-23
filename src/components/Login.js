@@ -9,7 +9,7 @@ function Login({ onLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Submitted', { username, password }); // Отладочное сообщение
-    if (username === 'user' && password === 'password') {
+    if (username === 'Roberto52' && password === '1818lacamisa') {
       console.log('Login successful'); // Отладочное сообщение
       onLogin(true);
       navigate('/'); // Перенаправляем на главную страницу
