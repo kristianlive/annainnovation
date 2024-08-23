@@ -1,7 +1,7 @@
 .prislista {
   text-align: center;
   padding: 20px;
-  background-color: #FFFCF6;
+  background-color: #FFFCF6; /* Светлый фон */
   color: #333;
 }
 
@@ -26,15 +26,15 @@
 }
 
 .price-item {
-  background-color: #f9edd6;
+  background-color: #f9edd6; /* Светлый фон карточек */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: left; /* Выравниваем текст по левому краю */
+  text-align: left;
   flex: 1 1 auto;
   min-width: 0;
-  word-wrap: break-word; /* Добавляем перенос слов */
-  word-break: break-word; /* Перенос слов для длинных слов */
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .price-item h3 {
@@ -47,7 +47,7 @@
   font-size: 1.2em;
   margin: 0;
   width: auto;
-  text-align: left; /* Текст по левому краю */
+  text-align: left;
   box-sizing: border-box;
 }
 
@@ -65,6 +65,7 @@
     padding: 15px; /* Уменьшаем отступы */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для лучшего визуального эффекта */
     margin-bottom: 10px; /* Добавляем нижний отступ между карточками */
+    text-align: center; /* Центрируем текст для лучшего отображения на мобильных */
   }
 
   .prislista {
@@ -84,4 +85,3 @@
     font-size: 1em; /* Уменьшение размера текста */
   }
 }
-
