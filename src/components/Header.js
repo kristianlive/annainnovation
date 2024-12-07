@@ -9,6 +9,7 @@ import logo from '../image/logo1.svg';
 function Header({ isAuthenticated, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  // eslint-disable-next-line
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -19,15 +20,15 @@ function Header({ isAuthenticated, onLogout }) {
     setIsOpen(false);
   };
 
-  const handleLoginClick = () => {
-    navigate('/login');
-    closeMenu();
-  };
+  // const handleLoginClick = () => {
+  //   navigate('/login');
+  //   closeMenu();
+  // };
 
-  const handleLogoutClick = () => {
-    onLogout();
-    navigate('/login');
-  };
+  // const handleLogoutClick = () => {
+  //   onLogout();
+  //   navigate('/login');
+  // };
 
   return (
     <header className="header">
