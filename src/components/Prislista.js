@@ -3,8 +3,8 @@ import './style/Prislista.css';
 
 function Prislista({ isAuthenticated }) {
   const [prices, setPrices] = useState({
-    laserArmhalor: localStorage.getItem('laserArmhalor') || '30 minuter, 499 kr',
-    laserBrasiliansk: localStorage.getItem('laserBrasiliansk') || '60 minuter, 899 kr',
+    laserArmhalor: localStorage.getItem('laserArmhalor') || '30 minuter, 399 kr',
+    laserBrasiliansk: localStorage.getItem('laserBrasiliansk') || '60 minuter, 799 kr',
     laserBrasilianskArmhalor: localStorage.getItem('laserBrasilianskArmhalor') || '60 minuter, 1 200 kr',
     laserBrasilianskArmhalorBackThigh: localStorage.getItem('laserBrasilianskArmhalorBackThigh') || '60 minuter, 1 500 kr',
     laserBrasilianskFull: localStorage.getItem('laserBrasilianskFull') || '90 minuter, 3 400 kr',
@@ -16,8 +16,8 @@ function Prislista({ isAuthenticated }) {
     laserFullArms: localStorage.getItem('laserFullArms') || '50 minuter, 800 kr',
     laserFullLegs: localStorage.getItem('laserFullLegs') || '60 minuter, 1 600 kr',
     waxingFullButtocks: localStorage.getItem('waxingFullButtocks') || '20 minuter, 299 kr',
-    waxingBrazilian: localStorage.getItem('waxingBrazilian') || '60 minuter, 499 kr',
-    waxingBrazilianArmhalor: localStorage.getItem('waxingBrazilianArmhalor') || '60 minuter, 599 kr',
+    waxingBrazilian: localStorage.getItem('waxingBrazilian') || '60 minuter, 550 kr',
+    waxingBrazilianArmhalor: localStorage.getItem('waxingBrazilianArmhalor') || '60 minuter, 650 kr',
     waxingBrazilianBackThigh: localStorage.getItem('waxingBrazilianBackThigh') || '60 minuter, 750 kr',
     waxingBrazilianHalfLegs: localStorage.getItem('waxingBrazilianHalfLegs') || '60 minuter, 899 kr',
     waxingBrazilianFullLegs: localStorage.getItem('waxingBrazilianFullLegs') || '90 minuter, 1 199 kr',
@@ -63,6 +63,7 @@ function Prislista({ isAuthenticated }) {
   return (
     <div className="prislista">
       <h1>Prislista</h1>
+      <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="button">Boka tid</a>
       <div className="pricing">
         <h2 className="category-title">Laser Behandling</h2>
         <div className="price-item">
@@ -209,6 +210,7 @@ function Prislista({ isAuthenticated }) {
             <p>{prices.laserFullLegs}</p>
           )}
         </div>
+        
         <h2 className="category-title">Vaxning</h2>
         <div className="price-item">
           <h3>Brasiliansk vaxning (rumpa ingår)</h3>
