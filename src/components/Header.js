@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './style/Header.css';
+import logo from '../image/logo1.svg';
+
+
+
 
 function Header({ isAuthenticated, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +31,9 @@ function Header({ isAuthenticated, onLogout }) {
 
   return (
     <header className="header">
-      <NavLink to="/" className={`logo ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu}>
-        Anna Innovation
-      </NavLink>
+      <NavLink to="/" className="logo" onClick={closeMenu}>
+        <img src={logo} alt="Anna Innovation Logo" className="header-logo" />
+        </NavLink>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
@@ -57,13 +61,13 @@ function Header({ isAuthenticated, onLogout }) {
               Om oss
             </NavLink>
           </li>
-          <li>
+          {/*<li>
             {isAuthenticated ? (
               <button onClick={handleLogoutClick}>Logga ut</button>
             ) : (
               <button onClick={handleLoginClick}>Logga in</button>
             )}
-          </li>
+          </li>*/}
         </ul>
       </div>
       <div className="hamburger" onClick={toggleMenu}>

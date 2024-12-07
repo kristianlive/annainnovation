@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .letter {
+      font-family: 'Arial', sans-serif;
+      font-size: 72px;
+      font-weight: bold;
+      fill: white;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .circle {
+      fill: #333; /* Темный фон */
+      stroke: white;
+      stroke-width: 2;
+    }
+    .shadow {
+      fill: rgba(0, 0, 0, 0.3); 
+    }
+  </style>
+  <circle class="shadow" cx="52" cy="52" r="45" />
+  <circle class="circle" cx="50" cy="50" r="45" />
+  <text class="letter" x="50" y="50">A</text>
+</svg>

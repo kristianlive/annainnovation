@@ -6,6 +6,7 @@ textarea {
   font-size: 1.2em;
   box-sizing: border-box;
   resize: vertical;
+
 }
 
 /* Стили для текстовых областей с классом .editable-textarea */
@@ -22,7 +23,7 @@ textarea {
 .home {
   text-align: center;
   padding: 20px;
-  background-color: #FFFCF6;
+  background-color: #FEFFFF;
   color: #333;
 }
 
@@ -81,11 +82,16 @@ textarea {
   object-fit: cover;
   border-radius: 8px;
   margin: 0 auto;
+
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+
+  
 }
 
 .button {
   display: inline-block;
-  background-color: #FF8C00;
+  background-color: #f5a25d;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -94,7 +100,7 @@ textarea {
 }
 
 .button:hover {
-  background-color: #e67600;
+  background-color: #e18f4a;
 }
 
 .faq {

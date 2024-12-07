@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style/Home.css';
-import vaxImage from '../image/vax8.jpg';
+import vaxImage from '../image/vax10.jpg';
 
 function Home({ isAuthenticated }) {
   const [openQuestion, setOpenQuestion] = useState(null);
@@ -57,7 +57,7 @@ function Home({ isAuthenticated }) {
       <div className="content">
         <div className="services">
           <div className="card service">
-            <h2>Vaxning Brasiliansk - 599 kr</h2>
+            <h2>Vaxning Brasiliansk - 550 kr</h2>
             {isAuthenticated ? (
               <textarea value={service1Text} onChange={handleService1Change} />
             ) : (

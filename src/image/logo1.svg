@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+  <style>
+    .text {
+      font-family: 'Arial', sans-serif;
+      font-size: 20px;
+      fill: white;
+      text-anchor: middle;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      stroke: white;
+      stroke-width: 2;
+      stroke-linecap: round;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+    }
+  </style>
+  <!-- Верхняя черточка -->
+  <line class="line" x1="10" y1="10" x2="190" y2="10" />
+  <!-- Текст -->
+  <text class="text" x="100" y="30">Anna Innovation</text>
+  <!-- Нижняя черточка -->
+  <line class="line" x1="10" y1="40" x2="190" y2="40" />
+</svg>

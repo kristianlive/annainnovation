@@ -2,7 +2,7 @@
 
 .header {
   background-color: #F9EDD6; /* Fallback-bakgrundsfärg */
-  background-image: url('../../image/vax6.webp'); /* Bakgrundsbild */
+  background-image: url('../../image/vax9.webp'); /* Bakgrundsbild */
   background-size: cover; /* Bilden täcker hela headern */
   background-position: center; /* Bilden är centrerad */
   color: black; /* Textfärg */
@@ -17,18 +17,16 @@
   z-index: 1; /* Headern ligger ovanför övrigt innehåll */
 }
 
-.logo {
+.header-logo {
+  width: 350px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  
   position: relative; /* Positionering för att kunna använda ::before */
-  margin: 0;
-  padding: 10px 20px; /* Padding för att ge utrymme runt texten */
-  flex-grow: 1;
-  color: rgb(255, 255, 255); /* Vit textfärg för att sticka ut mot bakgrunden */
-  text-shadow: 2px 2px 5px #F272A4, 0 0 5px #000000;
-  text-decoration: none;
-  font-size: 2.5em; /* Större textstorlek */
-  font-family: 'Playfair Display', serif; /* Använd Google Fonts */
-  z-index: 1; /* Se till att texten ligger ovanför ::before */
 }
+
+
 
 .logo:hover, .logo:focus {
   text-decoration: none; /* Ta bort understrykning vid hover och focus */
@@ -130,4 +128,7 @@
     position: absolute;
     right: 30px; /* Placera hamburger-menyn till höger */
   }
+  .header-logo {
+    width: 270px;
+ }
 }
