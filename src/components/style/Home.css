@@ -57,14 +57,13 @@ textarea {
 }
 
 .card {
-  background-color: #f9edd6;
-  padding: 20px;
-  border: 1px solid #ccc;
+  background: linear-gradient(to bottom, #fffaf0, #f5e8cc);
+  border: 1px solid #e5d4b8;
   border-radius: 8px;
-  flex: 1;
-  max-width: 500px;
-  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
+
 
 .card h2 {
   font-size: 1.8em;
@@ -113,15 +112,16 @@ textarea {
 }
 
 .faq-item {
-  background-color: #f9edd6;
   padding: 15px;
-  border: 1px solid #ccc;
+  background: linear-gradient(to bottom, #fffaf0, #f5e8cc);
+  border: 1px solid #e5d4b8;
   border-radius: 8px;
   margin-bottom: 10px;
   cursor: pointer;
   max-width: 60%;
   word-wrap: break-word;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .faq-item h3 {

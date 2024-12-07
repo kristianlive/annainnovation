@@ -56,6 +56,7 @@ function Home({ isAuthenticated }) {
 
       <div className="content">
         <div className="services">
+        <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="card-link">
           <div className="card service">
             <h2>Vaxning Brasiliansk - 550 kr</h2>
             {isAuthenticated ? (
@@ -64,6 +65,9 @@ function Home({ isAuthenticated }) {
               <p>{service1Text}</p>
             )}
           </div>
+          </a>
+
+          <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="card-link">
           <div className="card service">
             <h2>Laser Brasiliansk - 799 kr</h2>
             {isAuthenticated ? (
@@ -72,6 +76,7 @@ function Home({ isAuthenticated }) {
               <p>{service2Text}</p>
             )}
           </div>
+          </a>
         </div>
         <img src={vaxImage} alt="Vaxning" className="home-image" />
       </div>

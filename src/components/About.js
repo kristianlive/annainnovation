@@ -15,6 +15,7 @@ function About() {
     <p className="about-text">
       Min målsättning är att ge dig den bästa möjliga upplevelsen och att du ska känna dig nöjd och omhändertagen efter varje behandling. Välkommen att boka din tid hos mig!
     </p>
+    <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" className="button">Boka tid</a>
   </div>
 </section>
 

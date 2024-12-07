@@ -26,10 +26,12 @@
 }
 
 .price-item {
-  background-color: #f9edd6; /* Светлый фон карточек */
+  background: linear-gradient(to bottom, #fffaf0, #f5e8cc); /* Пастельный градиент */
+  border: 1px solid #e5d4b8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
   text-align: left;
   flex: 1 1 auto;
   min-width: 0;
