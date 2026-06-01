@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Innovation – Vaxning Malmö</title>
+<meta name="description" content="Professionell brasiliansk vaxning i Malmö. Certifierad specialist med 7 års erfarenhet. Betyg 5.0 · 570 recensioner. Boka online via Bokadirekt.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rose:#C8747A;--rose-l:#F9EDEE;--rose-d:#9B4D52;
+  --cream:#FAFAF8;--white:#FFF;--dark:#1E1A17;
+  --body:#4A3F39;--mid:#7A6A62;--light:#9C8E88;--border:#EAE0DB;
+  --ff-d:'Cormorant Garamond',serif;--ff-b:'Nunito',sans-serif;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);color:var(--body);background:var(--cream);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.nav-brand{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--dark);text-decoration:none}
+.nav-brand span{color:var(--rose)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px}
+
+/* FLOATING CTA — mobile only */
+.float-cta{
+  display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  z-index:300;background:var(--rose);color:#fff;font-family:var(--ff-b);
+  font-size:15px;font-weight:700;padding:14px 40px;border-radius:50px;
+  text-decoration:none;letter-spacing:0.04em;
+  box-shadow:0 8px 24px rgba(200,116,122,0.45);
+  transition:background .2s,transform .15s;
+}
+.float-cta:hover{background:var(--rose-d);transform:translateX(-50%) translateY(-2px)}
+@media(max-width:640px){.float-cta{display:block}}
+
+/* HERO */
+.hero{background:var(--white);padding:72px 32px 64px;text-align:center;border-bottom:1px solid var(--border)}
+.hero-tag{display:inline-block;background:var(--rose-l);color:var(--rose-d);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:7px 18px;border-radius:20px;margin-bottom:24px}
+.hero h1{font-family:var(--ff-d);font-size:54px;font-weight:600;line-height:1.1;color:var(--dark);margin-bottom:20px}
+.hero h1 em{color:var(--rose);font-style:italic}
+.hero-lead{color:var(--body);font-size:17px;font-weight:300;max-width:480px;margin:0 auto 24px;line-height:1.75}
+.hero-stars{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:32px}
+.hero-stars .s{color:#E8A825;font-size:18px;letter-spacing:2px}
+.hero-stars span{font-size:14px;color:var(--mid)}
+.hero-stars strong{color:var(--dark)}
+.btn-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--rose);color:#fff;font-family:var(--ff-b);font-size:15px;font-weight:600;padding:14px 32px;border-radius:6px;text-decoration:none;border:2px solid var(--rose);letter-spacing:0.03em;transition:background .2s}
+.btn:hover{background:var(--rose-d);border-color:var(--rose-d)}
+.btn-ghost{background:transparent;color:var(--rose)}
+.btn-ghost:hover{background:var(--rose-l)}
+.btn-white{background:#fff;color:var(--rose);border-color:#fff}
+.btn-white:hover{background:var(--rose-l);color:var(--rose-d)}
+.hero-meta{margin-top:32px;display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:24px}
+.hero-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mid);padding:4px 20px;border-right:1px solid var(--border)}
+.hero-meta-item:last-child{border-right:none}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--rose);flex-shrink:0}
+
+/* SECTIONS */
+section{padding:72px 32px}
+section.alt{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.si{max-width:860px;margin:0 auto}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
+.sec-title{font-family:var(--ff-d);font-size:36px;font-weight:600;line-height:1.2;color:var(--dark);margin-bottom:8px}
+.sec-sub{color:var(--mid);font-size:15px;font-weight:300;margin-bottom:40px;line-height:1.7}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+.service-card{border-radius:var(--radius);padding:28px;border:1.5px solid var(--border);background:var(--cream);transition:border-color .2s,transform .2s}
+.service-card:hover{border-color:var(--rose);transform:translateY(-2px)}
+.service-card.featured{background:var(--rose);border-color:var(--rose)}
+.service-card.featured .sc-name,.service-card.featured .sc-price,.service-card.featured .sc-desc{color:#fff}
+.service-card.featured .sc-icon{background:rgba(255,255,255,0.2);color:#fff}
+.sc-icon{width:42px;height:42px;border-radius:10px;background:var(--rose-l);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px}
+.sc-name{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.sc-price{font-family:var(--ff-d);font-size:26px;font-weight:600;color:var(--rose);margin-bottom:10px}
+.sc-desc{font-size:14px;color:var(--mid);font-weight:300;line-height:1.7}
+
+/* INNAN DU BOKAR */
+.innan-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.innan-card{border-radius:var(--radius);padding:24px;border:1.5px solid var(--border);background:var(--white)}
+.innan-card h3{font-family:var(--ff-d);font-size:18px;font-weight:600;color:var(--dark);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.innan-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.innan-card li{font-size:14px;color:var(--body);font-weight:300;display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.innan-card li::before{content:'✓';color:var(--rose);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-text p{font-size:16px;color:var(--body);font-weight:300;margin-bottom:18px;line-height:1.85}
+.about-text p strong{color:var(--dark);font-weight:600}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.stat{background:var(--rose-l);border-radius:10px;padding:18px 20px}
+.stat-num{font-family:var(--ff-d);font-size:32px;font-weight:600;color:var(--rose);line-height:1}
+.stat-lbl{font-size:13px;color:var(--rose-d);font-weight:500;margin-top:5px}
+.about-photo-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.about-photo{width:210px;height:210px;border-radius:50%;object-fit:cover;object-position:center 10%;border:4px solid var(--rose-l);display:block;box-shadow:0 8px 32px rgba(200,116,122,0.15)}
+.photo-caption{text-align:center}
+.photo-caption strong{display:block;font-size:16px;color:var(--dark);font-weight:600;margin-bottom:3px}
+.photo-caption span{font-size:13px;color:var(--mid);font-weight:400}
+.insta-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--rose);text-decoration:none;font-weight:600;margin-top:8px;padding:6px 14px;border:1.5px solid var(--rose-l);border-radius:20px;transition:background .2s}
+.insta-link:hover{background:var(--rose-l)}
+
+/* PRICES */
+.price-tabs{display:flex;gap:4px;margin-bottom:28px;background:var(--rose-l);padding:5px;border-radius:10px}
+.price-tab{flex:1;padding:10px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;border-radius:7px;color:var(--rose-d);border:none;background:transparent;transition:all .2s;font-family:var(--ff-b)}
+.price-tab.active{background:var(--white);color:var(--dark);box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.price-section{display:none}
+.price-section.active{display:block}
+.price-item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
+.price-item:last-child{border-bottom:none}
+.pi-name{font-size:15px;color:var(--dark);font-weight:400;line-height:1.45}
+.pi-detail{font-size:13px;color:var(--light);margin-top:3px}
+.pi-price{font-family:var(--ff-d);font-size:19px;font-weight:600;color:var(--rose);white-space:nowrap;margin-left:20px}
+.price-note{text-align:center;margin-top:28px;font-size:14px;color:var(--mid);padding:16px 20px;background:var(--rose-l);border-radius:8px}
+
+/* CAROUSEL */
+.carousel-wrap{position:relative;padding:0 0 24px}
+.carousel-track-outer{overflow:hidden;border-radius:var(--radius)}
+.carousel-track{display:flex;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.carousel-slide{
+  flex:0 0 calc(33.333% - 12px);margin-right:18px;
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--radius);padding:24px 22px;
+}
+.carousel-slide:last-child{margin-right:0}
+.review-stars{color:#E8A825;font-size:15px;letter-spacing:2px;margin-bottom:12px}
+.review-text{font-size:15px;color:var(--body);font-style:italic;line-height:1.7;margin-bottom:16px;font-weight:300}
+.review-author{display:flex;align-items:center;gap:10px}
+.reviewer-avatar{width:34px;height:34px;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#fff;flex-shrink:0}
+.reviewer-name{font-size:14px;font-weight:600;color:var(--dark)}
+.carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.carousel-arrows{display:flex;gap:10px}
+.carousel-btn{
+  width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);
+  background:var(--white);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;font-size:16px;color:var(--mid);transition:all .2s;
+}
+.carousel-btn:hover{border-color:var(--rose);color:var(--rose);background:var(--rose-l)}
+.carousel-dots{display:flex;gap:6px;align-items:center}
+.cdot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .2s;cursor:pointer}
+.cdot.active{background:var(--rose);width:18px;border-radius:3px}
+.reviews-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px}
+.reviews-badge{background:var(--rose-l);border-radius:var(--radius);padding:16px 24px;display:flex;align-items:center;gap:16px}
+.badge-score{font-family:var(--ff-d);font-size:48px;font-weight:600;color:var(--rose);line-height:1}
+.badge-right .s{color:#E8A825;font-size:16px;letter-spacing:2px}
+.badge-right p{font-size:13px;color:var(--rose-d);font-weight:500;margin-top:3px}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-size:16px;font-weight:500;color:var(--dark);display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;line-height:1.5}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--rose-l);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .25s,background .2s;font-weight:300}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--rose);color:#fff}
+.faq-a{font-size:15px;color:var(--body);font-weight:300;line-height:1.85;max-height:0;overflow:hidden;transition:max-height .35s,padding .35s}
+.faq-item.open .faq-a{max-height:300px;padding-top:14px}
+
+/* CTA STRIP */
+.cta-strip{background:var(--rose);padding:64px 32px;text-align:center}
+.cta-strip h2{font-family:var(--ff-d);font-size:40px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.2}
+.cta-strip p{color:rgba(255,255,255,0.85);font-size:17px;margin-bottom:28px;font-weight:300}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px 28px}
+.contact-card h3{font-family:var(--ff-d);font-size:20px;font-weight:600;color:var(--dark);margin-bottom:18px}
+.c-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.c-icon{color:var(--rose);font-size:18px;margin-top:1px;flex-shrink:0}
+.c-info{font-size:15px}
+.c-info a{color:var(--dark);text-decoration:none;transition:color .2s}
+.c-info a:hover{color:var(--rose)}
+.c-info p{color:var(--body);line-height:1.55}
+.hours-list{list-style:none}
+.hours-list li{display:flex;justify-content:space-between;font-size:15px;padding:8px 0;border-bottom:1px solid var(--border)}
+.hours-list li:last-child{border-bottom:none}
+.hours-list li span:last-child{color:var(--dark);font-weight:600}
+.map-box{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.map-box iframe{display:block;width:100%;height:200px;border:none}
+.presentkort-banner{
+  background:var(--rose-l);border:1.5px solid var(--rose);
+  border-radius:var(--radius);padding:18px 22px;
+  display:flex;align-items:center;gap:14px;margin-top:18px;
+}
+.presentkort-banner .pi{font-size:26px;flex-shrink:0}
+.presentkort-banner h4{font-family:var(--ff-d);font-size:17px;color:var(--dark);margin-bottom:3px}
+.presentkort-banner p{font-size:13px;color:var(--rose-d);font-weight:300;margin-bottom:8px}
+.insta-footer{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;margin-top:8px}
+.insta-footer:hover{color:var(--rose)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:32px}
+.footer-inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer p{color:rgba(255,255,255,0.4);font-size:13px}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--rose)}
+
+/* MOBILE */
+@media(max-width:640px){
+  nav{padding:0 20px}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:12px 0;border-bottom:1px solid var(--border)}
+  .hamburger{display:flex}
+  .hero{padding:48px 20px 40px;padding-bottom:80px}
+  .hero h1{font-size:38px}
+  section{padding:48px 20px}
+  .services-grid,.about-layout,.contact-grid,.innan-grid{grid-template-columns:1fr}
+  .hero-meta{flex-direction:column;align-items:center;gap:8px}
+  .hero-meta-item{border-right:none}
+  .cta-strip{padding:48px 20px}
+  .cta-strip h2{font-size:30px}
+  .carousel-slide{flex:0 0 calc(100% - 0px)}
+  .reviews-top{flex-direction:column;align-items:flex-start}
+}
+@media(min-width:641px) and (max-width:900px){
+  .carousel-slide{flex:0 0 calc(50% - 9px)}
+}
+</style>
+</head>
+<body>
+
+<a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="float-cta">Boka tid →</a>
+
+<nav>
+  <a href="#" class="nav-brand">Anna <span>Innovation</span></a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="#tjanster">Tjänster</a></li>
+    <li><a href="#priser">Priser</a></li>
+    <li><a href="#om">Om Anna</a></li>
+    <li><a href="#recensioner">Recensioner</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Vaxning · Malmö</div>
+  <h1>Mjuk hud,<br><em>utan ansträngning</em></h1>
+  <p class="hero-lead">Certifierad specialist med 7 års erfarenhet. Professionell brasiliansk vaxning i hjärtat av Malmö — i en trygg och välkomnande miljö.</p>
+  <div class="hero-stars">
+    <div class="s">★★★★★</div>
+    <strong>5.0</strong>
+    <span>· 570 recensioner på Bokadirekt</span>
+  </div>
+  <div class="btn-row">
+    <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="btn">Boka tid</a>
+    <a href="#priser" class="btn btn-ghost">Se priser</a>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="dot"></span>Amiralsgatan 87F, Malmö</div>
+    <div class="hero-meta-item"><span class="dot"></span>Mån–Sön 10:00–18:00</div>
+    <div class="hero-meta-item"><span class="dot"></span>Enkel bokning online</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="tjanster">
+  <div class="si">
+    <div class="sec-label">Behandlingar</div>
+    <div class="sec-title">Välj din behandling</div>
+    <div class="sec-sub">Skonsamma tekniker med professionella resultat — anpassat just för dig</div>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="sc-icon">✦</div>
+        <div class="sc-name">Brasiliansk Vaxning</div>
+        <div class="sc-price">från 599 kr</div>
+        <div class="sc-desc">Skonsam och effektiv metod med Italwax. Håret växer ut allt glesare för varje behandling — du ser och känner skillnaden direkt.</div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon">◎</div>
+        <div class="sc-name">Kombinationspaket</div>
+        <div class="sc-price">från 699 kr</div>
+        <div class="sc-desc">Kombinera brasiliansk vaxning med armhålor, ben, armar eller mage. Spara tid och pengar — perfekt för dig som vill behandla flera områden på en gång.</div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="btn">Visa alla tjänster och boka →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INNAN DU BOKAR -->
+<section class="alt" id="innan">
+  <div class="si">
+    <div class="sec-label">Tips</div>
+    <div class="sec-title">Innan du bokar</div>
+    <div class="sec-sub">Enkla tips som ger dig bästa möjliga resultat av din behandling</div>
+    <div class="innan-grid">
+      <div class="innan-card">
+        <h3>📋 Förberedelser</h3>
+        <ul>
+          <li>Peela huden 2 dagar innan — minskar risken för inåtväxta hårstrån</li>
+          <li>Undvik lotion och olja på området som ska behandlas</li>
+          <li>Håret bör vara minst 3–5 mm långt för bäst resultat</li>
+          <li>Undvik sol och solarium dagarna innan</li>
+        </ul>
+      </div>
+      <div class="innan-card">
+        <h3>🌸 Eftervård</h3>
+        <ul>
+          <li>Undvik solbad och varma bad i 24 timmar efter behandlingen</li>
+          <li>Välj löst sittande kläder direkt efter behandlingen</li>
+          <li>Applicera en lugnande lotion för att minska eventuell rodnad</li>
+          <li>Vänta 48 timmar innan du börjar peela igen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="om">
+  <div class="si">
+    <div class="sec-label">Om mig</div>
+    <div class="sec-title">Anna</div>
+    <div class="sec-sub">Vaxterapeut &amp; Laserbehandlare · Malmö</div>
+    <div class="about-layout">
+      <div class="about-text">
+        <p>Jag är certifierad specialist inom vaxning med <strong>snart 7 års erfarenhet</strong> i branschen. Sedan jag öppnade Anna Innovation har jag haft glädjen att hjälpa hundratals kunder och fått ett oerhört fint bemötande tillbaka.</p>
+        <p>Hos mig är du alltid välkommen som du är. Jag lägger stor vikt vid att varje behandling sker i en <strong>trygg, ren och avslappnad miljö</strong> — utan stress, utan dömande. Du ska känna dig omhändertagen från första stund.</p>
+        <p>Min filosofi är enkel: <strong>du ska lämna nöjd och vilja komma tillbaka.</strong> Det är det bästa kvitton jag kan få.</p>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="stat-num">7+</div>
+            <div class="stat-lbl">Års erfarenhet</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5.0 ★</div>
+            <div class="stat-lbl">570 recensioner</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-photo-box">
+        <img class="about-photo" src="data:image/jpeg;base64,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" alt="Anna – Vaxterapeut">
+        <div class="photo-caption">
+          <strong>Anna</strong>
+          <span>Vaxterapeut &amp; Laserbehandlare</span>
+        </div>
+        <a href="https://www.instagram.com/shneltseranna/" class="insta-link" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @shneltseranna
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="alt" id="priser">
+  <div class="si">
+    <div class="sec-label">Prislista</div>
+    <div class="sec-title">Priser</div>
+    <div class="sec-sub">Alla priser inkl. moms · Välj kategori nedan</div>
+    <div class="price-tabs">
+      <button class="price-tab active" onclick="showTab('braz',this)">Brasiliansk</button>
+      <button class="price-tab" onclick="showTab('vax',this)">Vaxning</button>
+      <button class="price-tab" onclick="showTab('paket',this)">Kombinationer</button>
+    </div>
+    <div id="tab-braz" class="price-section active">
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning</div><div class="pi-detail">60 min</div></div><div class="pi-price">599 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + bikinilinje</div><div class="pi-detail">60 min</div></div><div class="pi-price">750 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + baksida lår</div><div class="pi-detail">60 min</div></div><div class="pi-price">799 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + halva ben</div><div class="pi-detail">60 min</div></div><div class="pi-price">950 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + hela ben</div><div class="pi-detail">90 min</div></div><div class="pi-price">1 299 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + baksida lår + hela rumpa</div><div class="pi-detail">60 min</div></div><div class="pi-price">1 100 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + hela rumpa + halva ben</div><div class="pi-detail">60 min</div></div><div class="pi-price">1 200 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + hela armar</div><div class="pi-detail">60 min</div></div><div class="pi-price">900 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + hela mage</div><div class="pi-detail">60 min</div></div><div class="pi-price">950 kr</div></div>
+    </div>
+    <div id="tab-vax" class="price-section">
+      <div class="price-item"><div><div class="pi-name">Vaxning – armhålor</div><div class="pi-detail">30 min · med Italwax</div></div><div class="pi-price">199 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – bikinilinje</div><div class="pi-detail">30 min</div></div><div class="pi-price">450 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – bikinilinje + armhålor</div><div class="pi-detail">30 min</div></div><div class="pi-price">599 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – halva armar</div><div class="pi-detail">30 min · med Italwax</div></div><div class="pi-price">250 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – hela armar</div><div class="pi-detail">30 min</div></div><div class="pi-price">350 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – halva ben</div><div class="pi-detail">30 min</div></div><div class="pi-price">350 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – hela ben</div><div class="pi-detail">60 min</div></div><div class="pi-price">699 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – hela rumpa</div><div class="pi-detail">30 min</div></div><div class="pi-price">299 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – hela rygg (kvinna)</div><div class="pi-detail">30 min</div></div><div class="pi-price">499 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – låren baksida</div><div class="pi-detail">30 min</div></div><div class="pi-price">200 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – överläpp + haka</div><div class="pi-detail">30 min</div></div><div class="pi-price">299 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Vaxning – överläpp + haka + polisonger</div><div class="pi-detail">30 min</div></div><div class="pi-price">399 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Hela ben + bikinilinje</div><div class="pi-detail">60 min</div></div><div class="pi-price">999 kr</div></div>
+    </div>
+    <div id="tab-paket" class="price-section">
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor</div><div class="pi-detail">60 min · Erbjudande</div></div><div class="pi-price">699 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + halva ben</div><div class="pi-detail">60 min</div></div><div class="pi-price">999 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + hela ben</div><div class="pi-detail">75–90 min</div></div><div class="pi-price">1 299–1 350 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + hela armar</div><div class="pi-detail">60 min</div></div><div class="pi-price">999 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + hela ben + armar</div><div class="pi-detail">150 min</div></div><div class="pi-price">1 699 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk vaxning + armhålor + hela ben + hela rumpa</div><div class="pi-detail">120 min</div></div><div class="pi-price">1 699 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk + armhålor + halva ben + halva armar</div><div class="pi-detail">120 min</div></div><div class="pi-price">1 399 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Bikinilinje + armhålor + halva ben</div><div class="pi-detail">60 min</div></div><div class="pi-price">899 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Bikinilinje + armhålor + hela ben</div><div class="pi-detail">90 min</div></div><div class="pi-price">1 200 kr</div></div>
+      <div class="price-item"><div><div class="pi-name">Brasiliansk, armhålor, hela ben, armar, rumpa, rygg, mage</div><div class="pi-detail">160 min · Fullständigt paket</div></div><div class="pi-price">2 499 kr</div></div>
+    </div>
+    <div class="price-note">Fullständig prislista och bokning finns på <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" style="color:var(--rose-d);font-weight:600">Bokadirekt →</a></div>
+  </div>
+</section>
+
+<!-- REVIEWS CAROUSEL -->
+<section id="recensioner">
+  <div class="si">
+    <div class="reviews-top">
+      <div>
+        <div class="sec-label">Recensioner</div>
+        <div class="sec-title">Vad kunderna säger</div>
+      </div>
+      <div class="reviews-badge">
+        <div class="badge-score">5.0</div>
+        <div class="badge-right">
+          <div class="s">★★★★★</div>
+          <p>570 betyg på Bokadirekt</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Bäst!"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">KM</div>
+          <span class="reviewer-name">Katarina M.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Så nöjd, fantastisk kvinna!!"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">AF</div>
+          <span class="reviewer-name">Alexandra F.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Bäst"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">ML</div>
+          <span class="reviewer-name">Maria L.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Väldigt bra upplevelse"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">HN</div>
+          <span class="reviewer-name">Hanna N.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Trevlig, proffsig! Alltid nöjd."</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">MK</div>
+          <span class="reviewer-name">Matilda K.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"God energi alltid..."</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">MG</div>
+          <span class="reviewer-name">May G.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Anna är serviceminded..."</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">CP</div>
+          <span class="reviewer-name">Catherine P.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Alltid så nöjd..."</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">AC</div>
+          <span class="reviewer-name">Alice C.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Fantastisk! ❤️"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">NA</div>
+          <span class="reviewer-name">Nour A.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Wow!!!!"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">JJ</div>
+          <span class="reviewer-name">Julia J.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Väldigt bra, som vanligt ⭐️⭐️⭐️⭐️⭐️"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">MM</div>
+          <span class="reviewer-name">Marie M.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Fantastic"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">ZT</div>
+          <span class="reviewer-name">Zahra T.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Anna är en pärla..."</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">LL</div>
+          <span class="reviewer-name">Lara L.</span>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Alltid noggrann och vänlig!"</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">HK</div>
+          <span class="reviewer-name">Hanna K.</span>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-arrows">
+          <button class="carousel-btn" onclick="carouselMove(-1)">&#8592;</button>
+          <button class="carousel-btn" onclick="carouselMove(1)">&#8594;</button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:4px">
+      <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="btn btn-ghost">Läs alla 570 recensioner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" id="faq">
+  <div class="si">
+    <div class="sec-label">Frågor &amp; svar</div>
+    <div class="sec-title">Vanliga frågor</div>
+    <div class="sec-sub">Allt du behöver veta inför din behandling</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Hur länge håller resultaten? <div class="faq-icon">+</div></div>
+      <div class="faq-a">Resultaten håller i 4–6 veckor beroende på din hårväxtcykel. Vid regelbunden vaxning växer håret ut allt glesare och klenare — med tiden slipper du den irriterande stubben helt.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Är det värt att vaxa regelbundet? <div class="faq-icon">+</div></div>
+      <div class="faq-a">Absolut. Regelbunden vaxning förändrar hårstrukturen med tiden — håret växer ut tunnare, glesare och långsammare. De flesta kunder märker stor skillnad redan efter 3–4 behandlingar.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Gör det ont? <div class="faq-icon">+</div></div>
+      <div class="faq-a">Vi använder Italwax — ett premium-vax som är speciellt framtaget för känsliga partier och minimerar obehag. De flesta upplever det som helt hanterbart, och det blir lättare för varje gång du återkommer.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Hur bokar jag en tid? <div class="faq-icon">+</div></div>
+      <div class="faq-a">Enklast bokar du via Bokadirekt — välj tjänst, dag och tid som passar dig. Du kan också ringa eller maila Anna direkt om du har frågor eller önskemål.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Kan jag köpa presentkort? <div class="faq-icon">+</div></div>
+      <div class="faq-a">Ja! Presentkort med valfritt belopp finns att köpa via Bokadirekt. Ett populärt present-alternativ för den som vill ge bort lite välmående.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Redo för mjukare hud?</h2>
+  <p>Boka enkelt online — välj din tid på Bokadirekt</p>
+  <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="btn btn-white">Boka tid nu</a>
+</div>
+
+<!-- CONTACT -->
+<section id="kontakt">
+  <div class="si">
+    <div class="sec-label">Hitta oss</div>
+    <div class="sec-title">Kontakt &amp; öppettider</div>
+    <div class="sec-sub">Välkommen att höra av dig — vi svarar snabbt</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Kontaktuppgifter</h3>
+        <div class="c-row">
+          <span class="c-icon">✉</span>
+          <div class="c-info"><a href="mailto:gshneltser@hotmail.com">gshneltser@hotmail.com</a></div>
+        </div>
+        <div class="c-row">
+          <span class="c-icon">☎</span>
+          <div class="c-info"><a href="tel:+46704828033">070-482 80 33</a></div>
+        </div>
+        <div class="c-row">
+          <span class="c-icon">⌖</span>
+          <div class="c-info"><p>Amiralsgatan 87F<br>214 37 Malmö</p></div>
+        </div>
+        <div class="c-row">
+          <span class="c-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <div class="c-info"><a href="https://www.instagram.com/shneltseranna/" target="_blank">@shneltseranna</a></div>
+        </div>
+        <div class="presentkort-banner">
+          <div class="pi">🎁</div>
+          <div>
+            <h4>Presentkort</h4>
+            <p>Ge bort en behandling — valfritt belopp</p>
+            <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639" class="btn" style="padding:8px 18px;font-size:13px;display:inline-block">Köp presentkort</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Öppettider</h3>
+        <ul class="hours-list">
+          <li><span>Måndag</span><span>10:00–18:00</span></li>
+          <li><span>Tisdag</span><span>10:00–18:00</span></li>
+          <li><span>Onsdag</span><span>10:00–18:00</span></li>
+          <li><span>Torsdag</span><span>10:00–18:00</span></li>
+          <li><span>Fredag</span><span>10:00–18:00</span></li>
+          <li><span>Lördag</span><span>10:00–18:00</span></li>
+          <li><span>Söndag</span><span>10:00–18:00</span></li>
+        </ul>
+        <div class="map-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.3!2d13.0258!3d55.5904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAmiralsgatan+87F%2C+214+37+Malm%C3%B6!5e0!3m2!1ssv!2sse!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Anna Innovation · Malmö</p>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <a href="https://www.bokadirekt.se/places/anna-innovation-vaxning-malmo-52639">Boka via Bokadirekt</a>
+      <a href="https://www.instagram.com/shneltseranna/" target="_blank">Instagram</a>
+      <a href="mailto:gshneltser@hotmail.com">gshneltser@hotmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV
+function toggleMenu(){document.getElementById('navMenu').classList.toggle('open')}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(href==='#')return;
+    e.preventDefault();
+    document.getElementById('navMenu').classList.remove('open');
+    const t=document.querySelector(href);
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// PRICE TABS
+function showTab(name,el){
+  document.querySelectorAll('.price-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.price-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+// FAQ
+function toggleFaq(item){item.classList.toggle('open')}
+
+// CAROUSEL
+(function(){
+  const track = document.getElementById('carouselTrack');
+  const dotsEl = document.getElementById('carouselDots');
+  let current = 0;
+
+  function slidesPerView(){
+    if(window.innerWidth<=640) return 1;
+    if(window.innerWidth<=900) return 2;
+    return 3;
+  }
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+
+  function maxIndex(){
+    return Math.max(0, total - slidesPerView());
+  }
+
+  function buildDots(){
+    dotsEl.innerHTML='';
+    const pages = maxIndex()+1;
+    for(let i=0;i<pages;i++){
+      const d=document.createElement('div');
+      d.className='cdot'+(i===current?' active':'');
+      d.onclick=()=>goTo(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(idx){
+    current=Math.max(0,Math.min(idx,maxIndex()));
+    const spv=slidesPerView();
+    const slideW=slides[0].offsetWidth+18;
+    track.style.transform=`translateX(${-current*slideW}px)`;
+    dotsEl.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('active',i===current));
+  }
+
+  window.carouselMove=function(dir){goTo(current+dir)}
+  window.addEventListener('resize',()=>{buildDots();goTo(current)});
+  buildDots();
+
+  // Touch swipe
+  let tx=0;
+  track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+  track.addEventListener('touchend',e=>{
+    const dx=tx-e.changedTouches[0].clientX;
+    if(Math.abs(dx)>40) carouselMove(dx>0?1:-1);
+  });
+})();
+</script>
+</body>
+</html>
